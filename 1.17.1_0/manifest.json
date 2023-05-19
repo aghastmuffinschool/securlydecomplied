@@ -1,0 +1,54 @@
+{
+   "author": "Clever",
+   "background": {
+      "persistent": true,
+      "scripts": [ "js/background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "128": "marketing-assets/icons/128.png",
+         "16": "marketing-assets/icons/16.png",
+         "176": "marketing-assets/icons/176.png",
+         "20": "marketing-assets/icons/20.png",
+         "25": "marketing-assets/icons/25.png",
+         "30": "marketing-assets/icons/30.png",
+         "32": "marketing-assets/icons/32.png",
+         "40": "marketing-assets/icons/40.png",
+         "48": "marketing-assets/icons/48.png",
+         "96": "marketing-assets/icons/96.png"
+      }
+   },
+   "content_scripts": [ {
+      "js": [ "js/document_start.js" ],
+      "matches": [ "*://*/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "js/portal.js" ],
+      "matches": [ "*://localhost/in/*", "https://clever.com/in/*", "https://*.int.clever.com/in/*" ],
+      "run_at": "document_start"
+   } ],
+   "description": "Allows students and staff to access apps in Clever Portal.",
+   "externally_connectable": {
+      "matches": [ "*://localhost/*", "https://clever.com/*" ]
+   },
+   "icons": {
+      "128": "marketing-assets/icons/128.png",
+      "16": "marketing-assets/icons/16.png",
+      "176": "marketing-assets/icons/176.png",
+      "20": "marketing-assets/icons/20.png",
+      "25": "marketing-assets/icons/25.png",
+      "30": "marketing-assets/icons/30.png",
+      "32": "marketing-assets/icons/32.png",
+      "40": "marketing-assets/icons/40.png",
+      "48": "marketing-assets/icons/48.png",
+      "96": "marketing-assets/icons/96.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqco2tNZ0/zslVW+U96/X9tz4kJVL+QtNMQm0+L5p0DObWWKRKxUhOw9iquPL/DTVakkCHy0bbF9QaV+sMWnWaNXiHmzrjhx8oKEhvR2jBGbsGhDk1utINXucnJrtSESiEGPXkZbQ/Tjk6zOr6bntGgL8KsWV5gQUcPt2dzuM/8rboRHmK3XGagSN/fUF3vHllRNRDvyx28EKY6OYwFPbUsHkQnm9d1z3y/o0UTmd0ylfinS+2naIU9OVS8MXLcBtk4V1WTBv50WmEzbgdvrH7rghlZSddO91Uub7ymuun3TiZhB0szWK/W8lPCEJxOc4N4H+tt6xrbMxi8N3gSqVPQIDAQAB",
+   "manifest_version": 2,
+   "name": "Clever",
+   "permissions": [ "activeTab", "cookies", "tabs", "storage", "*://*/*", "https://clever.com/*" ],
+   "short_name": "Clever",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.17.1",
+   "web_accessible_resources": [ "js/credential_form.html" ]
+}
